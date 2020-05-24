@@ -14,7 +14,7 @@ body {
 }
 #kazananlar {
     display: flex;
-    
+    font-size: xx-large;
     flex-direction: column;
     width: 100%;
 }
