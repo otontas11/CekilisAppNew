@@ -15,6 +15,9 @@ const addPerson = document.getElementById("addPerson");
 const kisiListesi = document.getElementById("kisiListesi");
 const audioElement = document.createElement("audio");
 const displayWinners=document.getElementById("display")
+const animatedButton=document.getElementById("animatedButton");
+const firstWinnerAnimation=document.querySelector("tr#kazananlar")
+
 initial();
 
 function initial() {
@@ -115,7 +118,7 @@ startButton.addEventListener("click", function () {
   console.log("başlangıç listesi", namesList);
   setTimeout(() => {
     $(stopButton).trigger("click");
-  }, 19000);
+  }, 1900);
 
   intervalHandle = setInterval(function () {
     headerNames.textContent =
@@ -124,20 +127,27 @@ startButton.addEventListener("click", function () {
     console.log(headerNames.textContent);
   }, 1);
 });
+
+
 ////////////////////////////////////////////////////////////////////
 stopButton.addEventListener("click", function () {
   this.style.display = "none";
   startButton.style.display = "block";
 
+
+   animation();
   console.log("kazanan", headerNames.textContent);
   kazananlar(headerNames.textContent);
   namesList = namesList.filter(function (item) {
     return item !== headerNames.textContent;
   });
-
+  firstWinnerAnimate();
   clearInterval(intervalHandle);
 
   console.log("bitiş listesi", namesList);
+
+ console.log("first",firstWinnerAnimation.lastChild)
+   
 });
 
 function kazananlar(kazanan) {
@@ -157,4 +167,30 @@ function kazananlar(kazanan) {
   i = i + 1;
   kazananSirasi++;
   winners.innerHTML += html;
+ 
+}
+
+
+function animation()
+{
+ 
+  animatedButton.classList.add('animate__animated', 'animate__backInDown','animate__delay-2s' );
+
+  animatedButton.addEventListener('animationend', () => {
+   //anime Bittiiğinde
+    animatedButton.classList.remove('animate__animated', 'animate__backInDown','animate__delay-2s' );
+  
+  });
+
+}
+function firstWinnerAnimate(){
+  
+
+  firstWinnerAnimation.lastChild.classList.add('animate__animated', 'animate__backInDown','animate__delay-2s' );
+
+  firstWinnerAnimation.lastChild.addEventListener('animationend', () => {
+   //anime Bittiiğinde
+   firstWinnerAnimation.lastChild.classList.remove('animate__animated', 'animate__backInDown','animate__delay-2s' );
+  
+  });
 }
