@@ -118,7 +118,7 @@ startButton.addEventListener("click", function () {
   console.log("başlangıç listesi", namesList);
   setTimeout(() => {
     $(stopButton).trigger("click");
-  }, 1900);
+  }, 17000);
 
   intervalHandle = setInterval(function () {
     headerNames.textContent =
