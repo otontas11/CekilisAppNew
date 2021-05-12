@@ -21,6 +21,7 @@ body {
 div#startButton {
     position: absolute;
     top: 0;
+    margin-top: 10px;
     left: calc(50% - 75px);
    
 }
@@ -62,7 +63,7 @@ h1#headerNames {
     font-size: 150px;
     text-align: center;
     cursor: pointer;
-    font-size: 10vw;
+    font-size: 7vw;
 }
 .button {
     width: 150px;
@@ -129,8 +130,18 @@ h1#headerNames {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
-@media only screen and (max-width: 600px) {
+
+
+
+@media only screen and (max-width: 768px) {
     h1 {
         font-size: 50px;
    }
+
+   #display tbody tr { 
+    grid-template-columns: 1fr ;
 }
+}
+
+
+ 
