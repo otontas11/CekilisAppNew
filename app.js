@@ -125,7 +125,7 @@ startButton.addEventListener("click", function () {
       namesList[Math.floor(Math.random() * namesList.length)];
 
     console.log(headerNames.textContent);
-  }, 1);
+  }, 100);
 });
 
 
