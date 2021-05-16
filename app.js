@@ -189,7 +189,7 @@ function firstWinnerAnimate(){
   firstWinnerAnimation.lastChild.classList.add('animate__animated', 'animate__backInDown','animate__delay-2s' );
 
   firstWinnerAnimation.lastChild.addEventListener('animationend', () => {
-   //anime Bittiiğinde
+   //anime Bittiiğinde 
    firstWinnerAnimation.lastChild.classList.remove('animate__animated', 'animate__backInDown','animate__delay-2s' );
   
   });
